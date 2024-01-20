@@ -1,4 +1,4 @@
-{% extends "account/base_entrance.html" %}
+{% extends "account/base.html" %} 
 {% load i18n %}
 {% load allauth account %}
 {% block head_title %}
@@ -9,7 +9,7 @@
         {% trans "Sign In" %}
     {% endelement %}
     <p>
-        {% blocktrans %}If you have not created an account yet, then please
+        {% blocktrans %}If you have not created an account yet, then please XXX
     <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
     </p>
     {% url 'account_login' as login_url %}
