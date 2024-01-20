@@ -1,0 +1,54 @@
+{% load static %}
+<nav class="container">
+  <div class="">
+    <a href="{% url 'home' %}">
+      <img
+        class="p-1"
+        width="64"
+        height="64"
+        src="{% static 'images/tent-logo.png' %}"
+        alt="external-tent-camping"
+      />
+    </a>
+    <a class="" href="{% url 'home' %}">Super Camper - {{ user.username }}</a>
+
+        
+        {% if user.is_authenticated %}
+          
+        
+        <li class="">
+          <a class=" href="">Add Plot</a>
+        </li>
+        
+        <li class=">
+          <a class="" href=" ">Profile</a>
+        </li>
+        
+        
+        <li class="">
+          <a class="" href="{% url 'account_logout' %}">Logout</a>
+        </li>
+        
+
+        {% if user.is_superuser %}
+        <li class="">
+          <a class="" href="">Reports</a>
+        </li>
+          
+        {% endif %}
+
+
+        {% else %}
+        
+        <li class="">
+          <a class="" href="{% url 'account_login' %}">Login</a>
+        </li>
+        <li class="">
+          <a class="" href="{% url 'account_signup' %}">Register</a>
+        </li>
+        
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
